@@ -16,8 +16,8 @@ const renderPageIndicator = (totalPages: number, currentPage: number) => {
   for (let i = 0; i < totalPages; i++) {
     const isActive = i === currentPage;
     const pageIndicatorStyle = [
-      tw`w-2 h-2 rounded-full`,
-      isActive ? tw`bg-black` : tw`bg-gray-500`,
+      tw`w-[9px] h-[9px] rounded-full`,
+      isActive ? tw`bg-[#5B4300]` : tw`bg-[#CCC5BD]`,
     ];
     pageIndicators.push(<View key={i} style={pageIndicatorStyle} />);
   }
@@ -57,13 +57,15 @@ const BottomTab = ({
         tw`bg-white pb-[2.5rem] absolute bottom-0 w-full bordert-[1px] border-[#E2E2E2]`,
       ]}
     >
-      <View style={[tw`p-4 flex-row justify-center items-center gap-[1rem]`]}>
+      <View
+        style={[tw`py-5  flex-row justify-center items-center gap-[1.5rem]`]}
+      >
         <TouchableOpacity
           onPress={handlePrevPage}
           style={[tw`flex gap-[0.5rem] items-center`]}
           disabled={currentPage === 0} // Disable the button if on the first page
         >
-          <SvgXml xml={leftArrow} width={30} height={30} />
+          <SvgXml xml={leftArrow} width={25} height={25} />
         </TouchableOpacity>
 
         <View style={[tw`flex flex-row gap-[0.5rem] items-center`]}>
@@ -75,7 +77,7 @@ const BottomTab = ({
           style={[tw`flex gap-[0.5rem] items-center`]}
           disabled={currentPage === totalPages - 1} // Disable the button if on the last page
         >
-          <SvgXml xml={rightArrow} width={30} height={30} />
+          <SvgXml xml={rightArrow} width={25} height={25} />
         </TouchableOpacity>
       </View>
 
@@ -83,7 +85,9 @@ const BottomTab = ({
         onPress={handleConfirmation}
         style={[tw`bg-[#FFC529] mx-[2rem] rounded-2xl`]}
       >
-        <Text style={[tw`py-[1.2rem] text-center`]}>Select Products</Text>
+        <Text style={[tw`py-[1.2rem] text-center font-semibold text-[1rem]`]}>
+          Select Products
+        </Text>
       </TouchableOpacity>
     </View>
   );

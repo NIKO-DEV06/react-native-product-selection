@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from "react";
-import { View, FlatList } from "react-native";
+import { View, ScrollView, FlatList } from "react-native";
 import { DUMMY_DATA } from "../helpers/helper";
 import ProductCard from "./ProductCard";
 import tw from "twrnc";
@@ -42,14 +42,16 @@ const ProductSelection = ({
   );
 
   return (
-    <View style={[tw`flex justify-center items-center pt-[1rem]`]}>
-      <FlatList
-        data={paginatedData}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.title}
-        numColumns={2}
-      />
-    </View>
+    <ScrollView horizontal={false}>
+      <View style={[tw`flex justify-center items-center pt-[1rem]`]}>
+        <FlatList
+          data={paginatedData}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.title}
+          numColumns={2}
+        />
+      </View>
+    </ScrollView>
   );
 };
 
