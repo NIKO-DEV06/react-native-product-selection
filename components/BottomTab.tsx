@@ -54,7 +54,7 @@ const BottomTab = ({
   return (
     <View
       style={[
-        tw`bg-white pb-[2.5rem] absolute bottom-0 w-full bordert-[1px] border-[#E2E2E2]`,
+        tw`bg-white pb-[2.5rem] absolute bottom-0 w-full border-t-[1px] border-[#E2E2E2]`,
       ]}
     >
       <View

@@ -42,7 +42,7 @@ const ProductSelection = ({
   );
 
   return (
-    <ScrollView horizontal={false}>
+    <View>
       <View style={[tw`flex justify-center items-center pt-[1rem]`]}>
         <FlatList
           data={paginatedData}
@@ -51,7 +51,7 @@ const ProductSelection = ({
           numColumns={2}
         />
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
